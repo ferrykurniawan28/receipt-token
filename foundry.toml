@@ -1,0 +1,19 @@
+[profile.default]
+src = "src"
+out = "out"
+libs = ["lib"]
+solc_version = "0.8.30"
+via_ir = true
+auto_detect_solc = true
+evm_version = "cancun"
+optimizer_runs = 2000
+
+[rpc_endpoints]
+lisk_sepolia = "${LISK_SEPOLIA_RPC_URL}"
+
+[etherscan]
+lisk_sepolia = { key = "${BLOCKSCOUT_API_KEY}", url = "https://sepolia-blockscout.lisk.com/api" }
+
+# For verification
+[verify]
+lisk_sepolia = { verifier = "blockscout", etherscan_api_url = "https://sepolia-blockscout.lisk.com/api", etherscan_key = "${BLOCKSCOUT_API_KEY}" }
